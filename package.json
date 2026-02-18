@@ -1,0 +1,7 @@
+{
+  "name": "wng-sponsor-portal",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npx serve -l 5210 -s ."
+  }
+}

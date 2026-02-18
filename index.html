@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WNG 2026 Sponsorship Prospectus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --surface-2: #1a1a1a;
+      --surface-3: #222;
+      --border: #2a2a2a;
+      --text: #f5f5f5;
+      --muted: #888;
+      --accent: #c9a227;
+      --accent-dark: #a88520;
+      --gold: #d4af37;
+      --gold-light: #f4d03f;
+      --red: #dc2626;
+      --green: #22c55e;
+      --blue: #3b82f6;
+      --purple: #8b5cf6;
+      --font: 'Inter', -apple-system, sans-serif;
+      --display: 'Oswald', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── Scrollbar ─────────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+    /* ── Navigation ────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.3s;
+    }
+    nav.scrolled { padding: 12px 40px; background: rgba(10,10,10,0.95); }
+    
+    .logo {
+      font-family: var(--display);
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    
+    .nav-cta {
+      background: var(--gold);
+      color: var(--bg);
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    /* ── Hero ──────────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 40px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,162,39,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,162,39,0.1);
+      border: 1px solid rgba(201,162,39,0.3);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 32px;
+    }
+    
+    .hero h1 {
+      font-family: var(--display);
+      font-size: clamp(48px, 10vw, 120px);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      margin-bottom: 24px;
+    }
+    .hero h1 span { color: var(--gold); }
+    
+    .hero-sub {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+    
+    .hero-stats {
+      display: flex;
+      gap: 60px;
+      margin-top: 60px;
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat-value {
+      font-family: var(--display);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 8px;
+    }
+
+    /* ── Section Common ────────────────────────────────────────────── */
+    section { padding: 120px 40px; }
+    
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 80px;
+    }
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: var(--display);
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── Philosophy ────────────────────────────────────────────────── */
+    .philosophy { background: var(--surface); }
+    
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .philosophy-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px 36px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .philosophy-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: 0 20px 60px rgba(201,162,39,0.1);
+    }
+    
+    .philosophy-icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--accent-dark) 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 24px;
+    }
+    
+    .philosophy-card h3 {
+      font-family: var(--display);
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .philosophy-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── Timeline ──────────────────────────────────────────────────── */
+    .timeline-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, transparent, var(--gold), var(--gold), transparent);
+      transform: translateX(-50%);
+    }
+    
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    .timeline-item:nth-child(odd) { flex-direction: row-reverse; }
+    
+    .timeline-content {
+      width: calc(50% - 40px);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s;
+    }
+    .timeline-content:hover {
+      border-color: var(--gold);
+      transform: scale(1.02);
+    }
+    
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      top: 32px;
+      width: 20px;
+      height: 20px;
+      background: var(--gold);
+      border: 4px solid var(--bg);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    
+    .timeline-quarter {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    
+    .timeline-title {
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    
+    .timeline-date {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    
+    .timeline-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    
+    .timeline-tag {
+      display: inline-block;
+      background: rgba(201,162,39,0.15);
+      color: var(--gold);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 16px;
+    }
+
+    /* ── Audience Dashboard ────────────────────────────────────────── */
+    .dashboard { background: var(--surface); }
+    
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .dash-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s;
+    }
+    .dash-card:hover { border-color: rgba(201,162,39,0.5); }
+    .dash-card.wide { grid-column: span 2; }
+    
+    .dash-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    
+    .dash-value {
+      font-family: var(--display);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+    .dash-value span { color: var(--gold); font-size: 32px; }
+    
+    .dash-change {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--green);
+      margin-top: 12px;
+    }
+    
+    .dash-bar-container { margin-top: 24px; }
+    .dash-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .dash-bar-label {
+      font-size: 13px;
+      color: var(--muted);
+      width: 100px;
+    }
+    .dash-bar-track {
+      flex: 1;
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .dash-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 1s ease-out;
+    }
+    .dash-bar-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      width: 50px;
+      text-align: right;
+    }
+    
+    .dash-donut {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-top: 20px;
+    }
+    .donut-chart {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: conic-gradient(
+        var(--blue) 0% 60.5%,
+        var(--gold) 60.5% 100%
+      );
+      position: relative;
+    }
+    .donut-chart::after {
+      content: '';
+      position: absolute;
+      inset: 24px;
+      background: var(--surface-2);
+      border-radius: 50%;
+    }
+    .donut-legend { display: flex; flex-direction: column; gap: 12px; }
+    .legend-item { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+    .legend-dot { width: 12px; height: 12px; border-radius: 3px; }
+
+    /* ── Technical Assets ──────────────────────────────────────────── */
+    .assets-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .asset-card {
+      background: linear-gradient(145deg, var(--surface) 0%, var(--surface-2) 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 32px;
+      text-align: center;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+    .asset-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .asset-card:hover::before { opacity: 1; }
+    .asset-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    }
+    
+    .asset-icon {
+      font-size: 48px;
+      margin-bottom: 24px;
+    }
+    
+    .asset-card h3 {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+    
+    .asset-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── Sponsorship Tiers ─────────────────────────────────────────── */
+    .tiers { background: var(--surface); }
+    
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .tier-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px 36px;
+      position: relative;
+      transition: all 0.3s;
+    }
+    .tier-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+    }
+    .tier-card.featured {
+      background: linear-gradient(145deg, rgba(201,162,39,0.1) 0%, var(--surface-2) 100%);
+      border-color: var(--gold);
+      transform: scale(1.05);
+    }
+    .tier-card.featured:hover { transform: scale(1.08) translateY(-8px); }
+    
+    .tier-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--bg);
+      padding: 6px 20px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    
+    .tier-header { text-align: center; margin-bottom: 32px; padding-top: 16px; }
+    
+    .tier-name {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    
+    .tier-title {
+      font-family: var(--display);
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    
+    .tier-price {
+      font-family: var(--display);
+      font-size: 36px;
+      font-weight: 700;
+    }
+    .tier-price span {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--muted);
+    }
+    
+    .tier-features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+    .tier-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .tier-features li:last-child { border-bottom: none; }
+    .tier-features li::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    
+    .tier-cta {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: transparent;
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      border-radius: 8px;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      text-align: center;
+    }
+    .tier-cta:hover {
+      background: var(--gold);
+      color: var(--bg);
+    }
+    .tier-card.featured .tier-cta {
+      background: var(--gold);
+      color: var(--bg);
+    }
+    .tier-card.featured .tier-cta:hover {
+      background: var(--gold-light);
+    }
+
+    /* ── Council of Five ───────────────────────────────────────────── */
+    .council {
+      background: linear-gradient(180deg, var(--bg) 0%, var(--surface) 50%, var(--bg) 100%);
+      text-align: center;
+    }
+    
+    .council-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(220,38,38,0.15);
+      border: 1px solid rgba(220,38,38,0.4);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--red);
+      margin-bottom: 32px;
+    }
+    
+    .council-slots {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 60px 0;
+    }
+    
+    .council-slot {
+      width: 80px;
+      height: 100px;
+      background: var(--surface-2);
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    .council-slot.available {
+      border-style: solid;
+      border-color: var(--gold);
+      background: rgba(201,162,39,0.1);
+    }
+    .council-slot.available:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(201,162,39,0.3);
+    }
+    .council-slot.taken {
+      background: var(--surface-3);
+      border-color: var(--muted);
+      opacity: 0.5;
+    }
+    
+    .slot-number {
+      font-family: var(--display);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .council-slot.taken .slot-number { color: var(--muted); }
+    
+    .slot-status {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    
+    .council-features {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+    .council-feature {
+      text-align: center;
+    }
+    .council-feature-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+    .council-feature h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .council-feature p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ── Contact / CTA ─────────────────────────────────────────────── */
+    .contact { background: var(--surface); }
+    
+    .contact-container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .contact-form {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px;
+      margin-top: 48px;
+    }
+    
+    .form-group { margin-bottom: 20px; text-align: left; }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 15px;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      border: none;
+      border-radius: 8px;
+      color: var(--bg);
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 12px;
+    }
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(201,162,39,0.3);
+    }
+
+    /* ── Footer ────────────────────────────────────────────────────── */
+    footer {
+      padding: 60px 40px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    .footer-logo {
+      font-family: var(--display);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .footer-text {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 24px;
+    }
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text); }
+
+    /* ── Mobile Responsive ─────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .philosophy-grid,
+      .assets-grid,
+      .tiers-grid,
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+      }
+      .dash-card.wide { grid-column: span 1; }
+      .tier-card.featured { transform: none; }
+      .tier-card.featured:hover { transform: translateY(-8px); }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 12px 20px; }
+      .nav-links { display: none; }
+      section { padding: 80px 20px; }
+      .hero { padding: 100px 20px 60px; }
+      .hero-stats { flex-direction: column; gap: 32px; }
+      
+      .timeline-line { left: 20px; }
+      .timeline-item,
+      .timeline-item:nth-child(odd) { flex-direction: row; }
+      .timeline-content { width: calc(100% - 50px); margin-left: 50px; }
+      .timeline-dot { left: 20px; }
+      
+      .council-slots { flex-wrap: wrap; }
+      .council-features { flex-direction: column; gap: 24px; }
+      
+      .contact-form { padding: 32px 24px; }
+    }
+
+    /* ── Animations ────────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Counter animation */
+    .count-up { transition: all 0.3s; }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav id="nav">
+  <a href="#" class="logo">WNG</a>
+  <div class="nav-links">
+    <a href="#philosophy">Philosophy</a>
+    <a href="#calendar">2026 Calendar</a>
+    <a href="#audience">Audience</a>
+    <a href="#tiers">Sponsorship</a>
+    <a href="#council">Council</a>
+  </div>
+  <a href="#contact" class="nav-cta">Partner With Us</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-badge">
+    <span>🏆</span> 2026 Season Prospectus
+  </div>
+  <h1>THE FUTURE OF<br><span>COMBAT SPORT</span></h1>
+  <p class="hero-sub">
+    WNG isn't just an event — it's a full combat ecosystem. We combine brand professionalism 
+    with elite-level entertainment to create real athlete pathways, showcase top-tier talent, 
+    and lift the entire standard of combat sport.
+  </p>
+  <a href="#tiers" class="nav-cta" style="padding: 16px 40px; font-size: 14px;">Explore Partnership Tiers</a>
+  
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-value count-up" data-target="833655">0</div>
+      <div class="hero-stat-label">Peak 90-Day Reach</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-value count-up" data-target="49015">0</div>
+      <div class="hero-stat-label">Accounts Reached</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-value">500<span>+</span></div>
+      <div class="hero-stat-label">Projected Attendance</div>
+    </div>
+  </div>
+</section>
+
+<!-- Philosophy -->
+<section class="philosophy" id="philosophy">
+  <div class="section-header">
+    <div class="section-label">Our Philosophy</div>
+    <h2 class="section-title">Discipline. Betterment. Professional.</h2>
+    <p class="section-desc">
+      We blend the rigor of competitive combat sports with the reach of modern digital media, 
+      creating premium brand environments built on discipline and excellence.
+    </p>
+  </div>
+  
+  <div class="philosophy-grid">
+    <div class="philosophy-card animate-on-scroll">
+      <div class="philosophy-icon">⚔️</div>
+      <h3>Discipline</h3>
+      <p>Elite athletes, professionally structured competition formats, and consistent, high-level production standards that align with both our brand and our partners' values.</p>
+    </div>
+    <div class="philosophy-card animate-on-scroll">
+      <div class="philosophy-icon">📈</div>
+      <h3>Betterment</h3>
+      <p>Through our 100% alcohol-free platform, we create a high-standard culture where performance meets health. We curate an ecosystem that lifts the entire standard of the sport.</p>
+    </div>
+    <div class="philosophy-card animate-on-scroll">
+      <div class="philosophy-icon">🎯</div>
+      <h3>Professional</h3>
+      <p>WNG creates real athlete pathways and development systems, showcases top-tier talent, and combines brand professionalism with elite-level entertainment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2026 Calendar -->
+<section id="calendar">
+  <div class="section-header">
+    <div class="section-label">2026 Competition Calendar</div>
+    <h2 class="section-title">A Year-Long Ecosystem</h2>
+    <p class="section-desc">
+      Elite competition, athlete development, and brand partnership opportunities throughout the entire year.
+    </p>
+  </div>
+  
+  <div class="timeline-container">
+    <div class="timeline-line"></div>
+    
+    <div class="timeline-item animate-on-scroll">
+      <div class="timeline-content">
+        <div class="timeline-quarter">Q1: The Foundation</div>
+        <div class="timeline-title">2026 Season Launch</div>
+        <div class="timeline-date">February 21, 2026</div>
+        <p class="timeline-desc">Debut of the national circuit. High-volume athlete engagement and first 2026 data capture for the WNG App.</p>
+        <span class="timeline-tag">Feeder Show</span>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+    
+    <div class="timeline-item animate-on-scroll">
+      <div class="timeline-content">
+        <div class="timeline-quarter">Q2: The Revolution</div>
+        <div class="timeline-title">WNG 3 — Grappling + Muay Thai Exhibition</div>
+        <div class="timeline-date">May 2, 2026</div>
+        <p class="timeline-desc">Featuring our first-ever Muay Thai match. Official launch of WNG Combat and the move into professional striking.</p>
+        <span class="timeline-tag">Major Event</span>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+    
+    <div class="timeline-item animate-on-scroll">
+      <div class="timeline-content">
+        <div class="timeline-quarter">Q3: The Global Gateway</div>
+        <div class="timeline-title">PGF International Qualifier</div>
+        <div class="timeline-date">July 26, 2026</div>
+        <p class="timeline-desc">Exclusive Oceania gateway to the PGF USA. The premier prestige asset for the International Scholarship partner.</p>
+        <span class="timeline-tag">International</span>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+    
+    <div class="timeline-item animate-on-scroll">
+      <div class="timeline-content">
+        <div class="timeline-quarter">Q4: The Finale</div>
+        <div class="timeline-title">WNG 4 — Title Main Event + Female Bracket</div>
+        <div class="timeline-date">October 17, 2026</div>
+        <p class="timeline-desc">Crowning of new champions. Peak app and athlete engagement. Maximum visibility on Action Walls.</p>
+        <span class="timeline-tag">Championship</span>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+    
+    <div class="timeline-item animate-on-scroll">
+      <div class="timeline-content">
+        <div class="timeline-quarter">Q4: The Striking Debut</div>
+        <div class="timeline-title">WNG Combat — The Striking Debut</div>
+        <div class="timeline-date">November 26, 2026</div>
+        <p class="timeline-desc">The inaugural full striking show in the WNG Combat Arena. Maximum visibility on Action Walls.</p>
+        <span class="timeline-tag">Launch Event</span>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Audience Dashboard -->
+<section class="dashboard" id="audience">
+  <div class="section-header">
+    <div class="section-label">Audience Intelligence</div>
+    <h2 class="section-title">Data-Driven Reach</h2>
+    <p class="section-desc">
+      Real metrics from the WNG ecosystem. Track rapid expansion and audience engagement.
+    </p>
+  </div>
+  
+  <div class="dashboard-grid">
+    <div class="dash-card animate-on-scroll">
+      <div class="dash-label">Total Social Reach</div>
+      <div class="dash-value">800K<span>+</span></div>
+      <div class="dash-change">↑ Growing rapidly</div>
+    </div>
+    
+    <div class="dash-card animate-on-scroll">
+      <div class="dash-label">Peak 90-Day Views</div>
+      <div class="dash-value">833,655</div>
+      <div class="dash-change">↑ Content performance</div>
+    </div>
+    
+    <div class="dash-card animate-on-scroll">
+      <div class="dash-label">Accounts Reached</div>
+      <div class="dash-value">49,015</div>
+      <div class="dash-change">↑ 90-day window</div>
+    </div>
+    
+    <div class="dash-card wide animate-on-scroll">
+      <div class="dash-label">Geographic Distribution</div>
+      <div class="dash-bar-container">
+        <div class="dash-bar-item">
+          <span class="dash-bar-label">Melbourne</span>
+          <div class="dash-bar-track">
+            <div class="dash-bar-fill" style="width: 0%; background: var(--gold);" data-width="13%"></div>
+          </div>
+          <span class="dash-bar-value">13%</span>
+        </div>
+        <div class="dash-bar-item">
+          <span class="dash-bar-label">Sydney</span>
+          <div class="dash-bar-track">
+            <div class="dash-bar-fill" style="width: 0%; background: var(--blue);" data-width="12.5%"></div>
+          </div>
+          <span class="dash-bar-value">12.5%</span>
+        </div>
+        <div class="dash-bar-item">
+          <span class="dash-bar-label">Brisbane</span>
+          <div class="dash-bar-track">
+            <div class="dash-bar-fill" style="width: 0%; background: var(--green);" data-width="11%"></div>
+          </div>
+          <span class="dash-bar-value">11%</span>
+        </div>
+        <div class="dash-bar-item">
+          <span class="dash-bar-label">Other Australia</span>
+          <div class="dash-bar-track">
+            <div class="dash-bar-fill" style="width: 0%; background: var(--purple);" data-width="54%"></div>
+          </div>
+          <span class="dash-bar-value">54%</span>
+        </div>
+        <div class="dash-bar-item">
+          <span class="dash-bar-label">International</span>
+          <div class="dash-bar-track">
+            <div class="dash-bar-fill" style="width: 0%; background: var(--red);" data-width="12.5%"></div>
+          </div>
+          <span class="dash-bar-value">12.5%</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="dash-card animate-on-scroll">
+      <div class="dash-label">Audience Acquisition</div>
+      <div class="dash-donut">
+        <div class="donut-chart"></div>
+        <div class="donut-legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background: var(--blue);"></div>
+            <span>60.5% New Audiences</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: var(--gold);"></div>
+            <span>39.5% Core Community</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Technical Assets -->
+<section id="assets">
+  <div class="section-header">
+    <div class="section-label">Technical Assets</div>
+    <h2 class="section-title">Technology Drives Engagement</h2>
+    <p class="section-desc">
+      Purpose-built digital infrastructure for sponsor integration and audience engagement.
+    </p>
+  </div>
+  
+  <div class="assets-grid">
+    <div class="asset-card animate-on-scroll">
+      <div class="asset-icon">📱</div>
+      <h3>WNG App Gateway</h3>
+      <p>Direct-to-consumer platform controlling event access, athlete profiles, and authenticated streaming across devices.</p>
+    </div>
+    <div class="asset-card animate-on-scroll">
+      <div class="asset-icon">🎬</div>
+      <h3>Stream Entry Portals</h3>
+      <p>Customizable landing experiences for sponsor-specific traffic routing with attribution tracking and conversion analytics.</p>
+    </div>
+    <div class="asset-card animate-on-scroll">
+      <div class="asset-icon">⏱️</div>
+      <h3>Broadcast Game Clock</h3>
+      <p>Proprietary timing system syncing digital assets, promotional messaging, and live event rhythm for integrated delivery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Sponsorship Tiers -->
+<section class="tiers" id="tiers">
+  <div class="section-header">
+    <div class="section-label">Partnership Tiers</div>
+    <h2 class="section-title">Strategic Investment Levels</h2>
+    <p class="section-desc">
+      Flexible partnership structures designed to maximize brand visibility and engagement.
+    </p>
+  </div>
+  
+  <div class="tiers-grid">
+    <!-- Tier 3 -->
+    <div class="tier-card animate-on-scroll">
+      <div class="tier-header">
+        <div class="tier-name">Tier 3</div>
+        <div class="tier-title">Event Partner</div>
+        <div class="tier-price">$5,000 <span>/ event</span></div>
+      </div>
+      <ul class="tier-features">
+        <li>Banner and flag placement at selected event</li>
+        <li>Event-day social amplification</li>
+        <li>Pre & post-event social posts with logo watermark</li>
+        <li>1× 20sec ad run in live stream</li>
+        <li>Event match naming rights</li>
+      </ul>
+      <a href="#contact" class="tier-cta">Get Started</a>
+    </div>
+    
+    <!-- Tier 2 -->
+    <div class="tier-card featured animate-on-scroll">
+      <span class="tier-badge">Most Popular</span>
+      <div class="tier-header">
+        <div class="tier-name">Tier 2</div>
+        <div class="tier-title">Season Council</div>
+        <div class="tier-price">$15,000–$30,000 <span>/ year</span></div>
+      </div>
+      <ul class="tier-features">
+        <li>Co-Main Event & Bracket naming rights options</li>
+        <li>45 seconds total airtime per live stream</li>
+        <li>Multi-channel reach across WNG, Artemis, M16</li>
+        <li>Barricade integration — dominant walk-out placement</li>
+        <li>Vehicle & showroom display space at venue</li>
+        <li>Dedicated B2C engagement hub</li>
+      </ul>
+      <a href="#contact" class="tier-cta">Partner Now</a>
+    </div>
+    
+    <!-- Tier 1 -->
+    <div class="tier-card animate-on-scroll">
+      <div class="tier-header">
+        <div class="tier-name">Tier 1</div>
+        <div class="tier-title">Title Partner</div>
+        <div class="tier-price">$50,000–$75,000 <span>/ year</span></div>
+      </div>
+      <ul class="tier-features">
+        <li>'Presented By' across all 2026 events</li>
+        <li>Exclusive naming rights to championship final</li>
+        <li>Stream Entry Portal ownership — your corporate URL</li>
+        <li>App splash screen dominance</li>
+        <li>Action Wall placement — primary broadcast backdrop</li>
+        <li>Category exclusivity — zero competitor presence</li>
+        <li>5×15 second commercial stings</li>
+      </ul>
+      <a href="#contact" class="tier-cta">Inquire Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Council of Five -->
+<section class="council" id="council">
+  <div class="section-header">
+    <div class="council-badge">
+      <span>🔥</span> Limited Availability
+    </div>
+    <h2 class="section-title">The Council of Five</h2>
+    <p class="section-desc">
+      Only five Premier Partnership slots will be granted for the 2026 season, 
+      securing high-impact title status across the entire WNG ecosystem.
+    </p>
+  </div>
+  
+  <div class="council-slots">
+    <div class="council-slot available">
+      <span class="slot-number">1</span>
+      <span class="slot-status">Available</span>
+    </div>
+    <div class="council-slot available">
+      <span class="slot-number">2</span>
+      <span class="slot-status">Available</span>
+    </div>
+    <div class="council-slot available">
+      <span class="slot-number">3</span>
+      <span class="slot-status">Available</span>
+    </div>
+    <div class="council-slot available">
+      <span class="slot-number">4</span>
+      <span class="slot-status">Available</span>
+    </div>
+    <div class="council-slot available">
+      <span class="slot-number">5</span>
+      <span class="slot-status">Available</span>
+    </div>
+  </div>
+  
+  <div class="council-features">
+    <div class="council-feature">
+      <div class="council-feature-icon">🎯</div>
+      <h4>Strategic Alignment</h4>
+      <p>Partner selection based on brand fit</p>
+    </div>
+    <div class="council-feature">
+      <div class="council-feature-icon">⚡</div>
+      <h4>Immediate Activation</h4>
+      <p>Asset access within 72 hours</p>
+    </div>
+    <div class="council-feature">
+      <div class="council-feature-icon">🏆</div>
+      <h4>Category Exclusivity</h4>
+      <p>Zero competitor presence</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <div class="section-header" style="margin-bottom: 0;">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Start the Conversation</h2>
+      <p class="section-desc">
+        Interested in partnering with WNG for the 2026 season? 
+        Let's discuss how we can create value together.
+      </p>
+    </div>
+    
+    <form class="contact-form" id="contactForm">
+      <div class="form-group">
+        <label>Organization Name</label>
+        <input type="text" name="organization" required placeholder="Your company or brand" />
+      </div>
+      <div class="form-group">
+        <label>Contact Name</label>
+        <input type="text" name="name" required placeholder="Your name" />
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" required placeholder="you@company.com" />
+      </div>
+      <div class="form-group">
+        <label>Partnership Interest</label>
+        <select name="tier" required>
+          <option value="">Select a tier...</option>
+          <option value="tier1">Tier 1: Title Partner ($50K–$75K)</option>
+          <option value="tier2">Tier 2: Season Council ($15K–$30K)</option>
+          <option value="tier3">Tier 3: Event Partner ($5K)</option>
+          <option value="scholarship">PGF International Scholarship</option>
+          <option value="custom">Custom Partnership</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message (Optional)</label>
+        <textarea name="message" placeholder="Tell us about your brand and partnership goals..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Submit Interest</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">WNG</div>
+  <p class="footer-text">Discipline. Betterment. Professional.</p>
+  <div class="footer-links">
+    <a href="#">Website</a>
+    <a href="#">Instagram</a>
+    <a href="#">Contact</a>
+  </div>
+  <p class="footer-text" style="margin-top: 32px; font-size: 11px;">
+    © 2026 WNG & Fit Focus Media. All rights reserved.
+  </p>
+</footer>
+
+<script>
+// ── Scroll-based nav styling ───────────────────────────────────────────────
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ── Scroll animations ──────────────────────────────────────────────────────
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      
+      // Animate bars
+      const bars = entry.target.querySelectorAll('.dash-bar-fill[data-width]');
+      bars.forEach(bar => {
+        setTimeout(() => {
+          bar.style.width = bar.dataset.width;
+        }, 200);
+      });
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// ── Counter animation ──────────────────────────────────────────────────────
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const duration = 2000;
+  const start = performance.now();
+  
+  function update(currentTime) {
+    const elapsed = currentTime - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const easeOut = 1 - Math.pow(1 - progress, 3);
+    const current = Math.floor(easeOut * target);
+    el.textContent = current.toLocaleString();
+    
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    }
+  }
+  
+  requestAnimationFrame(update);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.dataset.animated) {
+      entry.target.dataset.animated = 'true';
+      animateCounter(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.count-up[data-target]').forEach(el => counterObserver.observe(el));
+
+// ── Form submission ────────────────────────────────────────────────────────
+document.getElementById('contactForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit');
+  const originalText = btn.textContent;
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+  
+  // Simulate submission
+  setTimeout(() => {
+    btn.textContent = '✓ Submitted!';
+    btn.style.background = 'var(--green)';
+    
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 3000);
+  }, 1000);
+});
+
+// ── Smooth scroll for anchor links ─────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
