@@ -837,6 +837,10 @@
 
     /* ── Mobile Responsive ─────────────────────────────────────────── */
     @media (max-width: 1024px) {
+      #arena > div:last-child {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
       .philosophy-grid,
       .assets-grid,
       .tiers-grid,
@@ -904,7 +908,7 @@
 </nav>
 
 <!-- Hero -->
-<section class="hero">
+<section class="hero" style="background: linear-gradient(to bottom, rgba(10,10,10,0.7), rgba(10,10,10,0.95)), url('images/page2_img4.jpeg') center/cover no-repeat;">
   <div class="hero-badge">
     <span>🏆</span> 2026 Season Prospectus
   </div>
@@ -915,6 +919,8 @@
     and lift the entire standard of combat sport.
   </p>
   <a href="#tiers" class="nav-cta" style="padding: 16px 40px; font-size: 14px;">Explore Partnership Tiers</a>
+  
+  <img src="images/page1_img3.jpeg" alt="WNG Championship Belt" style="max-width: 400px; width: 90%; margin-top: 48px; border-radius: 16px; box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
   
   <div class="hero-stats">
     <div class="hero-stat">
@@ -945,17 +951,17 @@
   
   <div class="philosophy-grid">
     <div class="philosophy-card animate-on-scroll">
-      <div class="philosophy-icon">⚔️</div>
+      <img src="images/page2_img2.jpeg" alt="Champion" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
       <h3>Discipline</h3>
       <p>Elite athletes, professionally structured competition formats, and consistent, high-level production standards that align with both our brand and our partners' values.</p>
     </div>
     <div class="philosophy-card animate-on-scroll">
-      <div class="philosophy-icon">📈</div>
+      <img src="images/page2_img4.jpeg" alt="Arena" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
       <h3>Betterment</h3>
       <p>Through our 100% alcohol-free platform, we create a high-standard culture where performance meets health. We curate an ecosystem that lifts the entire standard of the sport.</p>
     </div>
     <div class="philosophy-card animate-on-scroll">
-      <div class="philosophy-icon">🎯</div>
+      <img src="images/page2_img6.jpeg" alt="Victory" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px;">
       <h3>Professional</h3>
       <p>WNG creates real athlete pathways and development systems, showcases top-tier talent, and combines brand professionalism with elite-level entertainment.</p>
     </div>
@@ -1121,6 +1127,43 @@
   </div>
 </section>
 
+<!-- Arena Branding -->
+<section id="arena" style="background: var(--surface);">
+  <div class="section-header">
+    <div class="section-label">WNG Combat Arena</div>
+    <h2 class="section-title">Premium Brand Visibility</h2>
+    <p class="section-desc">
+      A permanent event structure designed for maximum brand visibility and audience immersion through strategic surface placement.
+    </p>
+  </div>
+  
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 1200px; margin: 0 auto; align-items: center;">
+    <div class="animate-on-scroll">
+      <img src="images/page5_img2.jpeg" alt="WNG Arena Mat Branding" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+    </div>
+    <div class="animate-on-scroll">
+      <h3 style="font-family: var(--display); font-size: 28px; margin-bottom: 20px;">Action Walls</h3>
+      <p style="color: var(--muted); line-height: 1.7; margin-bottom: 24px;">
+        Our purpose-built arena features one 10.8m back wall and two 8.9m sloped side walls, creating premium, high-impact branding space. The open-faced design faces tiered seating with arena-side VIP and sponsor seating.
+      </p>
+      <ul style="list-style: none;">
+        <li style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); color: var(--muted);">
+          <span style="color: var(--gold);">✓</span> Controlled camera sightlines
+        </li>
+        <li style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); color: var(--muted);">
+          <span style="color: var(--gold);">✓</span> Uninterrupted brand exposure
+        </li>
+        <li style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); color: var(--muted);">
+          <span style="color: var(--gold);">✓</span> High-energy wall exchanges
+        </li>
+        <li style="display: flex; align-items: center; gap: 12px; padding: 12px 0; color: var(--muted);">
+          <span style="color: var(--gold);">✓</span> Maximum entertainment + sponsor impact
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- Technical Assets -->
 <section id="assets">
   <div class="section-header">
@@ -1129,6 +1172,10 @@
     <p class="section-desc">
       Purpose-built digital infrastructure for sponsor integration and audience engagement.
     </p>
+  </div>
+  
+  <div style="max-width: 800px; margin: 0 auto 60px;">
+    <img src="images/page4_img2.jpeg" alt="WNG App" style="width: 100%; border-radius: 16px; box-shadow: 0 30px 60px rgba(0,0,0,0.4);">
   </div>
   
   <div class="assets-grid">
